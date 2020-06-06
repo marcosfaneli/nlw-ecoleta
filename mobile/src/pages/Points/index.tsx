@@ -163,7 +163,7 @@ const Points = () => {
                             activeOpacity={0.6}
                             onPress={() => handleSelectItem(item.id)}
                         >
-                            {/* <SvgUri width={42} height={42} uri={item.image_url} /> */}
+                            <SvgUri width={42} height={42} uri={item.image_url} />
                             <Text style={styles.itemTitle}>{item.nome}</Text>
                         </TouchableOpacity>
                     ))
