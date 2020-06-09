@@ -10,7 +10,7 @@ import api from '../../services/api'
 
 interface Item {
     id: number,
-    nome: string,
+    title: string,
     image_url: string
 }
 
@@ -52,8 +52,8 @@ const Points = () => {
         async function loadPosition() {
             const { status } = await Location.requestPermissionsAsync()
 
-            if (status == 'granted') {
-                Alert.alert('Ops..', 'Precisamos da sua permissão para obter localização')
+            if (status !== 'granted') {
+                Alert.alert('Ops..', 'Precisamos da sua permissão para obter localização.')
                 return
             }
             const location = await Location.getCurrentPositionAsync()
@@ -164,7 +164,7 @@ const Points = () => {
                             onPress={() => handleSelectItem(item.id)}
                         >
                             <SvgUri width={42} height={42} uri={item.image_url} />
-                            <Text style={styles.itemTitle}>{item.nome}</Text>
+                            <Text style={styles.itemTitle}>{item.title}</Text>
                         </TouchableOpacity>
                     ))
                     }

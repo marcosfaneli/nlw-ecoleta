@@ -21,7 +21,7 @@ routes.post(
     '/points', 
     upload.single('image'), 
     celebrate({
-        body: Joi.Object().keys({
+        body: Joi.object().keys({
             name: Joi.string().required(),
             email: Joi.string().required().email(),
             whatsapp: Joi.string().required(),

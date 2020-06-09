@@ -9,7 +9,7 @@ class ItemsController {
             .map(item => {
                 return {
                     id: item.id,
-                    nome: item.title,
+                    title: item.title,
                     image_url: `http://192.168.0.14:3333/uploads/${item.image}`
                 }
             })
